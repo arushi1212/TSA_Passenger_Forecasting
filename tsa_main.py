@@ -6,8 +6,8 @@ from sklearn.metrics import mean_absolute_error
 import holidays
 
 #Load Data
-train = pd.read_csv("C:\\Users\\Arush\\Downloads\\TSA_Assessment_Packet\\tsa_train.csv")
-test = pd.read_csv("C:\\Users\\Arush\\Downloads\\TSA_Assessment_Packet\\tsa_test.csv")
+train = pd.read_csv("tsa_train.csv")
+test = pd.read_csv("tsa_test.csv")
 
 #converting Date column to Datetime
 train['Date'] = pd.to_datetime(train['Date'])
@@ -87,4 +87,5 @@ plt.show()
 #evaluating model
 if "Volume" in test.columns:
     mae = mean_absolute_error(test['Volume'], test["prediction"])
+
     print(f"Test MAE: {mae:,.2f}")
